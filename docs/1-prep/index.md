@@ -222,7 +222,7 @@ Koiere das *alles* in das **Key**-Feld bei GitHub und speichere danach mit einem
 Klick auf **Add SSH Key**. Das war's!
 
 <details>
-<summary>SSH? ED25519? `ssh-add`? Hä?</summary>
+<summary>SSH? ED25519? Hä?</summary>
 Falls dir nicht genau klar ist, was da gerade passiert ist, mach dir nichts
 draus. Da ist ein notwendiger Schritt, um effizient mit GitHub (bzw. mit jedem
 Git-Anbieter da draußen) arbeiten zu können. Das hat nicht wirklich was mit git
@@ -231,7 +231,7 @@ Workshops nicht mehr wirklich damit befassen. (Außer du hast ein Passwort für
 deinen Schlüssel vergeben, dann wünschen wir dir viel Spaß beim Tippen...)
 Spätestens in einer Kryptographie-Vorlesung werden dir SSH und das
 Public/Private-Key-Verfahren aber wieder über den Weg laufen. Für Interessierte:
-[Wikipedia über das Public-Key-Verfahren](https://de.m.wikipedia.org/wiki/Public-Key-Authentifizierung).
+<a href="https://de.m.wikipedia.org/wiki/Public-Key-Authentifizierung">Wikipedia über das Public-Key-Verfahren</a>.
 </details>
 
 ## Zusammenfassung
