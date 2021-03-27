@@ -176,7 +176,7 @@ ohne Endung ist dein privater Schlüssel. Sie sollte deinen Computer niemals
 verlassen.
 
 Abschließend müssen wir den SSH-Key noch unserem `ssh-agent` bekannt machen.
-Dieses Programm übernimmt für uns später im Hintergrund die Authenifizierung.
+Dieses Programm übernimmt für uns später im Hintergrund die Authentifizierung.
 
 ```bash
 ssh-add ~/.ssh/id_ed25519
@@ -218,8 +218,8 @@ cat id_rsa.pub
 
 Dieser beginnt mit `ssh-ed25519` oder `id-rsa` und endet mit deiner
 Mail-Adresse. Dazwischen befindet sich eine lange, zufällige Zeichenkette.
-Koiere das *alles* in das **Key**-Feld bei GitHub und speichere danach mit einem
-Klick auf **Add SSH Key**. Das war's!
+Kopiere das *alles* in das **Key**-Feld bei GitHub und speichere danach mit
+einem Klick auf **Add SSH Key**. Das war's!
 
 <details>
 <summary>SSH? ED25519? Hä?</summary>
