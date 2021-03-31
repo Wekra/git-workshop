@@ -95,6 +95,15 @@ cat eine_datei.txt
 
 Der `cat`-Befehl ist eine einfache Möglichkeit, den Inhalt von Dateien zu sehen.
 
+Falls du mal im aktuellen Verzeichnis einen Unterordner anlegen musst, geht das
+ganz einfach mit:
+
+```bash
+mkdir verzeichnisname
+```
+
+`mkdir` steht dabei für "make directory".
+
 ## GitHub-Account einrichten
 
 Wir nutzen in diesem Workshop GitHub als zentrale Plattform. Viele von euch
