@@ -140,15 +140,80 @@ Tagebucheintrag mit git verwalten wollen. Dann machen wir das mal.
 
 ## Die erste Datei committen
 
-// TODO
+Bevor wir gleich unseren ersten Commit machen, sollten wir noch über die
+**Staging Area** reden. Die Staging Area ist ein Bereich, in dem du Änderungen
+an diversen Dateien sammeln kannst, bevor du sie dann in einem Schnappschuss
+festhältst. Falls du eine Metapher dazu brauchst: Du ziehst um, und räumst dein
+Bücherregel aus. Die Bücher räumst du in Umzugskartons. Dabei achtest du darauf,
+die von dir sorgsam ausgearbeitete Anordnung nicht kaputt zu machen. Du räumst
+alle Thriller in eine Box, alle Fantasy-Bücher in eine andere, und eine ganz
+große Kiste füllst du mit Fachbüchern über Informatik. Möglicherweise mistest du
+einige in die Jahre gekommene Bücher aus oder entscheidest dich um. Die Kisten
+sind deine Staging Area, die geduldig darauf warten, dass du mit ihrem, von dir
+zusammengestellten Inhalt zufrieden bist. Wenn du eine Kiste als "fertig
+gepackt" empfindest, machst du einen Deckel drauf, und die Umzugshelfer nehmen
+die gesamte Kiste und räumen sie in den Umzugsvan. Du kannst jetzt (im Rahmen
+dieser Metapher) keine Änderungen mehr am Inhalt dieser Kiste vornehmen. Der
+Vorgang des Deckel-drauf-und-ab-ins-Auto ist der Commit.
+
+Übertragen auf die Software-Entwicklung erlaubt dir die Staging Area, an
+mehreren Stellen in einer Code Base zu arbeiten, dann aber nur die Dateien
+zusammen zu commiten, die etwas miteinander zu tun haben. So sind deine Beiträge
+zu Coding-Projekten (hoffentlich) nachvollziehbar, atomar und ohne seltsame
+Nebeneffekte an Stellen, wo man sie nicht erwartet.
+
+Gennug der Theorie. Wir haben unseren Tagebucheintrag und wollen ihn committen.
+Fügen wir ihn also unser Staging Area hinzu. Das machen wir mit dem
+`add`-Befehl.
 
 ```bash
 git add entry_1.txt
+```
+
+Du gibst an, welche Datei der Staging Area hinzugefügt (denglisch "geaddet")
+werden soll. Schauen wir uns den aktuellen Status an.
+
+```bash
 git status
+```
+
+Okay, wir sind immer noch auf dem master-Branch. Darum kümmern wir uns wie
+gesagt später. Wir haben auch immer noch keine Commits. Aber wir sind ja gerade
+dabei, das zu ändern. Jetzt wird es aber interessant: Da steht "changes to be
+committed", gefolgt von einem Eintrag "new file: entry_1.txt". Unser Eintrag ist
+also in der Staging Area gelandet. Die Datei ist in der Umzugskiste. Machen wir
+jetzt also den Deckel drauf uns räumen sie in den Umzugswagen.
+
+```bash
 git commit -m "Add first entry"
-git status
+```
+
+Auch wenn das jetzt relativ unspektakulär aussieht, haben wir gerade unseren
+ersten Commit gemacht. Nice. Das `-m` ist die Kurzversion von `--message` und
+erlaubt es uns, eine Commit-Message anzugeben. **Bitte vergib immer sinnvolle
+Commit-Messages**. Das ist wirklich wichtig. Es gehört aber zu jeder
+erfolgreichen Informatik-Karriere, dass man in studentischen oder persönlichen
+Projekten mal so Commit-Messages wie "Changed things", "this works but I don't
+know how" oder "Mama sagt es gibt Essen" verfasst. Achte aber einfach darauf,
+möglichst gut zu beschreiben, welche Änderungen du mit diesem Commit
+festhältst, und leg pro Projekt eine Sprache für Commit-Messages fest. 
+
+Wenn du jetzt noch mal `git status` ausführst, siehst du, dass wir uns auf dem
+master-Branch befinden (Überraschung) und nichts zu committen haben, unser
+"working tree" ist "clean". Das heißt: Der Zustand aller lokalen Dateien im
+Repository entspricht dem Stand, der in git festgehalten ist.
+
+Nun gibt es einen praktischen Befehl, der dir deine Commit-Historie
+übersichtlich darstellt:
+
+```bash
 git log
 ```
+
+Diese Historie enthält aktuell nur einen Commit, der dich als Autor ausweist und
+den genauen Zeitstempel enthält; außerdem deine Commit-Message. Wenn du also
+wissen willst, wer in einem git-Repository zuletzte gearbeitet hat, hilft dir
+ein Blick auf `git log`.
 
 ## Ein Projekt auf GitHub anlegen und mit einem lokalen Repository verknüpfen
 
