@@ -217,11 +217,74 @@ ein Blick auf `git log`.
 
 ## Ein Projekt auf GitHub anlegen und mit einem lokalen Repository verknüpfen
 
-// TODO
+Unter [github.com/new](https://github.com/new) kannst du ein neues Projekt
+bei GitHub anlegen. Dabei wird zunächst kein neues Repository erzeugt.
+(Zumindest solange du keine Dateien automatisch anlegen lässt). Du kannst auch
+auf der GitHub-Startseite links neben der Überschrift Repositories auf "New"
+klicken, um zu dieser Seite zu gelangen.
 
-* privates repo anlegen
-* Remote festlegen und pushen
-* Bedeutung lokal und remote
+Du musst lediglich einen Repository-Namen vergeben, für unsere Zwecke kannst du
+dir einfach einen ausdenken oder du nimmst `git-workshop`. Ob du das Repository
+public (also für die ganze Welt sichtbar) oder private (nur für dich sichtbar)
+machst, bleibt dir überlassen. Du brauchst keine der Zusatzoptionen anwählen.
+Klicke abschließend auf "Create Repository".
+
+GitHub leitet dich nun auf die Übersichts-Seite deines neu erstellten Repos
+(Kurzform von Repository) weiter. Es enthält wie gewünscht noch keine Dateien,
+aber GitHub schlägt dir einige Wege vor, um das zu ändern. Wir brauchen die
+Option "Push an existing repository from the command line", denn ein Repository
+haben wir ja schon. Wir wechseln also zurück ins Terminal.
+
+### Über Remotes
+
+Bisher haben wir lediglich über Repositories gesprochen. Nun unterteilen wir das
+noch feiner und unterscheiden ab sofort **Local Repositories** und **Remote
+Repositories**. Bisher gearbeitet haben wir mit dem lokalen Repo. Das ist das
+git-verwaltete Verzeichnis auf deinem Computer. Um die Möglichkeiten von git
+voll auszuschöpfen, wollen wir aber in aller Regel mit anderen gemeinsam am Code
+arbeiten. Um den jeweiligen Arbeitsstand untereinander auszutauschen, bietet
+sich vor allem ein zentrales Remote Repo an. Das befindet sich normalerweise bei
+einem Git-Hoster wie GitHub, Bitbucket oder einem von eurem Arbeitgeber oder der
+Hochschule bereitgestellten Git-Server.
+
+<details>
+<summary>Politischer Hintergrund zur Zentralität (optional)</summary>
+git wurde vor allem als dezentrales Tool geschaffen, um nicht von einer
+kontrollierenden Instanz abhängig sein zu müssen. Man kann Git-Commits bspw.
+auch als E-Mail-Anhänge verschicken und so ohne zentralen Server auskommen. Das
+ist zwar umständlicher als der Weg über GitHub, man ist aber eben nicht abhängig
+von einer dritten Partei. Der Weg über einen zentralen Git-Server hat sich aber
+für die meisten Projekte durchgesetzt. Firmen hosten wie gesagt i. d. R. ihre
+eigenen Git-Server. 
+</details>
+
+Wir können nun unser lokales Repo mit einem remote Repo verknüpfen. Das
+geschieht über folgenden Befehl (wir befinden uns nach wei vor im
+Projekt-Verzeichnis unseres Tagebuchs):
+
+```bash
+git remote add origin git@github.com:<deinUsername>/git-workshop.git
+```
+
+Du fügst deinem git-Projekt also ein "remote" hinzu (`git remote add`). Das
+danach folgende `origin` ist der Name des Remote (ein Repo kann auch mehrere
+Remotes haben), "origin" ist einfach eine Konvention. Als letzter Parameter
+folgt dann noch die Adresse des eben angelegten Remote Repos auf GitHub. Achte
+darauf, dass du deinen Nutzernamen und den von dir vergebenen Repo-Namen korrekt
+angibst. Als nächstes "schieben" wir noch den aktuellen Zustand unseres lokalen
+Repos zum remote.
+
+```bash
+git push --set-upstream origin master
+```
+
+Wir schieben (pushen) unseren aktuellen Stand zum gerade angelegten "origin".
+Dafür nutzen wir den master-Branch, der uns jetzt schon einige Male
+untergekommen ist. (Hierzu am Ende dieses Moduls mehr Theorie.)
+
+Wenn alles geklappt hat, siehst du nach einem Refresh der Repo-Seite bei GitHub
+im Browser, dass dein Tagebucheintrag aufgetaucht ist. Herzlichen Glückwunsch,
+du hast ein Remote Repo erfolgreich angelegt!
 
 ## Änderugen von Remote ins lokale Repository holen
 
