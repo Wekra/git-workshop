@@ -25,7 +25,7 @@ git config --global user.email "wowl1234@hs-karlsruhe.de"
 Wichtig ist dabei, dass du als E-Mail-Adresse die Adresse hinterlegst, mit der
 du dich auch bei GitHub angemeldet hast. So kann GitHub deine Arbeit auch mit
 deinem Account verknüpfen. Dir ist vielleicht der Zusatz `--global` aufgefallen.
-Damit legst du die systemweite Einstellung fest. git erlaubt es dir auch, in
+Damit legst du die systemweite Einstellung fest. Git erlaubt es dir auch, in
 verschiedenen Projekten verschiedene Adressen und Namen zu nutzen, z. B. wenn du
 für die Arbeit oder die Uni andere Accounts verwenden musst. Dazu später mehr.
 
@@ -96,7 +96,7 @@ Wenn du diesen Befehl ausgeführt hast, wird außer der Ausgabe "Initialized emp
 Git repository..." nicht viel passiert sein. Aber wenn du mit `ls -a` versteckte
 Dateien anzeigen lässt, siehst du, dass neben deiner Tagebuch-Datei ein
 `.git`-Verzeichnis angelegt wurde. In diesem Verzeichnis musst du nichts
-machen. git managed alles für dich.
+machen. Git managed alles für dich.
 
 Was machen wir also als erstes mit unserem schicken Repository? Erst mal den
 Status checken.
@@ -128,7 +128,7 @@ Schnappschusses. Die werden wir gleich kennen lernen.
 > `    entry_1.txt`
 
 Git hat unseren Tagebucheintrag also schon gefunden, meldet aber aktuell noch,
-dass diese Datei nicht getrackt wird. D. h., git verwaltet diese Datei noch
+dass diese Datei nicht getrackt wird. D. h. git verwaltet diese Datei noch
 nicht für uns. Außerdem spoilert git hier schon, was wir als nächstes machen
 müssen.
 
@@ -143,7 +143,8 @@ Tagebucheintrag mit git verwalten wollen. Dann machen wir das mal.
 Bevor wir gleich unseren ersten Commit machen, sollten wir noch über die
 **Staging Area** reden. Die Staging Area ist ein Bereich, in dem du Änderungen
 an diversen Dateien sammeln kannst, bevor du sie dann in einem Schnappschuss
-festhältst. Falls du eine Metapher dazu brauchst: Du ziehst um, und räumst dein
+festhältst.  
+Falls du eine Metapher dazu brauchst: Du ziehst um, und räumst dein
 Bücherregel aus. Die Bücher räumst du in Umzugskartons. Dabei achtest du darauf,
 die von dir sorgsam ausgearbeitete Anordnung nicht kaputt zu machen. Du räumst
 alle Thriller in eine Box, alle Fantasy-Bücher in eine andere, und eine ganz
@@ -162,7 +163,7 @@ zusammen zu commiten, die etwas miteinander zu tun haben. So sind deine Beiträg
 zu Coding-Projekten (hoffentlich) nachvollziehbar, atomar und ohne seltsame
 Nebeneffekte an Stellen, wo man sie nicht erwartet.
 
-Gennug der Theorie. Wir haben unseren Tagebucheintrag und wollen ihn committen.
+Genug der Theorie. Wir haben unseren Tagebucheintrag und wollen ihn committen.
 Fügen wir ihn also unser Staging Area hinzu. Das machen wir mit dem
 `add`-Befehl.
 
@@ -191,7 +192,7 @@ git commit -m "Add first entry"
 Auch wenn das jetzt relativ unspektakulär aussieht, haben wir gerade unseren
 ersten Commit gemacht. Nice. Das `-m` ist die Kurzversion von `--message` und
 erlaubt es uns, eine Commit-Message anzugeben. **Bitte vergib immer sinnvolle
-Commit-Messages**. Das ist wirklich wichtig. Es gehört aber zu jeder
+Commit-Messages**. Das ist wirklich wichtig. Es gehört zu jeder
 erfolgreichen Informatik-Karriere, dass man in studentischen oder persönlichen
 Projekten mal so Commit-Messages wie "Changed things", "this works but I don't
 know how" oder "Mama sagt es gibt Essen" verfasst. Achte aber einfach darauf,
@@ -259,7 +260,7 @@ eigenen Git-Server.
 </details>
 
 Wir können nun unser lokales Repo mit einem remote Repo verknüpfen. Das
-geschieht über folgenden Befehl (wir befinden uns nach wei vor im
+geschieht über folgenden Befehl (wir befinden uns nach wie vor im
 Projekt-Verzeichnis unseres Tagebuchs):
 
 ```bash
