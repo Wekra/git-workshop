@@ -26,7 +26,7 @@ Folgende Module solltest du in dieser Reihenfolge bearbeiten:
    gerade liest. Dabei wirst du alle Techniken, die du bisher gelernt hast,
    anwenden.
 
-## 1. Methodik
+## Methodik
 
 Dieser Workshop funktioniert nach dem "Inverted Classroom"-Prinzip. (Mehr dazu
 auf [Wikipedia](https://de.m.wikipedia.org/wiki/Umgedrehter_Unterricht).) Wir
@@ -60,23 +60,23 @@ ist es auch nicht verboten, Google anzuschmeißen.
 
 Jetzt aber los!
 
-## 2. Alles Wichtige Vorbereiten
+## Modul 1: Alles Wichtige Vorbereiten
 
-[(TODO) Hier geht es zum ersten Modul: Die Vorbereitung](/git-workshop/1-prep/)
+[Hier geht es zum ersten Modul: Die Vorbereitung](/git-workshop/1-prep/)
 
-## 3. Unser Erstes Repository
+## Modul 2: Unser Erstes Repository
 
 [(TODO) Hier geht es zum zweiten Modul: Git Basics](/git-workshop/2-basics/)
 
-## 4. Mit Merge Requests Arbeiten
+## Modul 3: Mit Merge Requests Arbeiten
 
 [(TODO) Hier geht es zum dritten Modul: Merge Requests](/git-workshop/3-merge-requests/)
 
-## 5. Die Untiefen von git
+## Modul 4: Die Untiefen von git
 
 [(TODO) Hier geht es zum vierten Modul: Git für Fortgeschrittene](/git-workshop/4-advanced/)
 
-## 6. Abschlussaufgabe
+## Modul 5: Abschlussaufgabe
 
 [(TODO) Hier geht es zum fünften Modul: Die Abschlussaufgabe](/git-workshop/5-exercise/)
 
