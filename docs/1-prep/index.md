@@ -79,7 +79,7 @@ cd  pfad/zu/einem/verzeichnis
 
 Mit dem `cd`-Befehl (change directory) wechselt du in ein Verzeichnis. In
 welches, das hängt davon ab, was du hinten dran schreibst. Mit dem Befehl `cd ~`
-gelangst du übrigens jederzeit in dein Heimverzeichnis.
+gelangst du übrigens jederzeit in dein Heimverzeichnis. Mit `cd ..` kannst du schnell in das übergeordnete Verzeichnis wechseln.
 
 ```bash
 ls
@@ -134,7 +134,7 @@ Terminal und starten im Heimverzechnis:
 cd ~
 ```
 
-Sie mit dem Befehl `ls -a` nach, ob das Verzeichnis `.ssh` existiert. Wenn ja,
+Schaut mit dem Befehl `ls -a` nach, ob das Verzeichnis `.ssh` existiert. Wenn ja,
 hast du vermutlich schon mal einen SSH-Key angelegt unfd findest in diesem
 Verzeichnis zwei Dateien:
 
@@ -203,7 +203,7 @@ gerade erstellt haben; und dass es unserer ist.
 ### SSH-Key bei GitHub hinterlegen
 
 Wenn ihr nach eurer Registrierung noch bei GitHub angemeldet seid, führt euch
-der Link auf [github.com/profile/settings](https://github.com/settings/profile)
+der Link [github.com/profile/settings](https://github.com/settings/profile)
 zu eurer Account-Einstellungs-Seite. Dort gibt es links den Punkt **SSH and GPG
 keys**. Nach einem Klick darauf habt ihr oben rechts die Möglichkeit, über **New
 SSH Key** einen neuen Schlüssel hinzuzufügen. Als Titel könnt ihr einen
