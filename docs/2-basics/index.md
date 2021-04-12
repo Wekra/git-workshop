@@ -347,13 +347,135 @@ Mit diesem Befehl können wir den Inhalt der Datei anzeigen lassen.
 
 ## Branches erstellen
 
-// TODO
- 
-* mit cleanem Stand lokal
-* git checkout -b my-branch git status / create file entry_2.txt / git add / git commit /
-  git push -> neuer Branch! Achtung
-* Switch zwischen den Branches lokal und auf GitHub
+Im Laufe deiner Arbeit mit Git hast du bisher schon einige Male das Wort
+*Branch* gelesen, also "Zweig". Jetzt schauen wir, was es damit auf sich hat.
 
+> Branching ("Verzweigen") ist ein spannendes Thema, v. a. da Bäume in der
+> Informatik als Datenstrukturen überall auftauchen. Wir behandeln hier das
+> Thema nur grob, sodass du die wichtigsten Features kennen lernst.
+
+Wir haben schon viel über Snapshots oder Schnappschüsse gesprochen, also
+Commits. Bisher hast du davon zwei erzeugt. Das besondere an Commits ist, dass
+sie aufeinander aufbauen. Man kann die Commit-History (`git log`) also auch
+grafisch darstellen:
+
+```txt
+┌────────┐     ┌────────┐     ┌────────┐     ┌────────┐
+│Commit 1│<────┤Commit 2│<────│Commit 3│<────┤Commit 4│
+└────────┘     └────────┘     └────────┘     └────────┘
+```
+
+Dabei verweist der folgende Commit immer auf den vorherigen. So entsteht ein
+gedachter Baum, der Aktuell einfach nur einen langen, geraden Ast hat. Stell dir
+nun folgendes vor:
+
+```txt
+                        ┌────────┐     ┌────────┐
+              ┌─────────│Commit 3│<────┤Commit 5│
+              /         └────────┘     └────────┘
+┌────────┐   / ┌────────┐     ┌────────┐
+│Commit 1│<────┤Commit 2│<────│Commit 4│
+└────────┘     └────────┘     └────────┘
+```
+
+Hier sehen wir zwei Zweige. Commit 2 und Commit 3 zeigen beide auf den ersten
+Commit, danach entwickelt sich aber eine unterschiedliche Historie. Betrachten
+wir die Commits in der unteren Reihe als unseren Hauptzweig, so könnte der obere
+Zweig entstehen, weil jemand ausgehend von Commit 1 ein neues Feature entwickelt
+hat (das bist du in einem Projektteam, während die anderen Team-Member weiter
+auf dem Haupt-Zweig arbeiten). Wenn du mit dem Feature fertig bist, möchtest du
+natürlich, dass es in den Haupt-Zweig wandert und Teil des eigentlichen Projekts
+wird. Deshalb erlaubt es dir Git auch, Zweige wieder zusammenzuführen. Das nennt
+sich dann **Merge** (engl. zusammenführen):
+
+```txt
+                        ┌────────┐     ┌────────┐
+              ┌─────────│Commit 3│<────┤Commit 5│<─┐
+              /         └────────┘     └────────┘   \
+┌────────┐   / ┌────────┐     ┌────────┐             \  ┌────────┐
+│Commit 1│<────┤Commit 2│<────│Commit 4│<───────────────│Commit 6│
+└────────┘     └────────┘     └────────┘                └────────┘
+```
+
+Der entstehende Commit 6 zeigt jetzt auf die Änderungen im oberen Branch sowie
+den letzten Commit aus dem unteren Branch. Das neue Feature wurde also mit dem
+bestehenden Haupt-Zweig zusammen gebracht!
+
+**Bisher hast du einfach nur auf dem Haupt-Branch gearbeitet: `master`**
+
+Wir können uns ganz einfach einen Branch erzeugen (man sagt dazu "einen neuen
+Branch auschecken"):
+
+```bash
+git checkout -b my-branch
+```
+
+Je nachdem, wie euer Terminal konfiguriert ist, zeigt es euch auch den Branch
+an, auf dem ihr euch aktuell befindet. Falls du einmal `git status` ausführst,
+siehst du, dass git dir dort jetzt statt "On branch master" "On branch
+my-branch" sagt. Nun legen wir einen zweiten Tagebuch-Eintrag an.
+
+```bash
+echo "Das ist mein zweiter Tagebucheintrag." > entry_2.txt
+```
+
+Wir commiten diese Datei mal direkt:
+
+```bash
+git add entry_2.txt
+git commit -m "Add second entry"
+```
+
+Wenn du nun wieder `git log` ausführst, siehst du, dass ein dritter Commit
+hinzugekommen ist. Achte nun mal darauf, was hinter den langen Commit-IDs steht.
+Der oberste Eintrag lautet `(HEAD -> my-branch)`. `HEAD` ist ein Konstrukt in
+Git, das angibt, wo du dich aktuell in deinem Verzeichnis befindest. Du
+befindest dich auf dem Branch `my-branch`, und darauf zeigt `HEAD`
+korrekterweise. Beim Commit darunter steht (`origin/master`, `master`). Das
+heißt, sowohl dein lokales Repository als auch das Remote Repository bei GitHub
+(genannt `origin`, s.o.) sind auf dem Stand des Commits davor.
+
+Jetzt wollen wir unseren neuen Branch auch mal zu GitHub bringen, oder? Wir
+benutzen wie gewohnt `git push`:
+
+```bash
+git push
+```
+
+Ups.
+
+> `fatal: The current branch my-branch has no upstream branch.`
+> `To push the current branch and set the remote as upstream, use`
+> 
+> `git push --set-upstream origin my-branch`
+
+Da hat wohl was nicht geklappt, aber Git hilft wie immer tatkräftig weiter. Es
+weiß nicht automatisch, welchem Brnach euer lokaler Branch im Remote Repository
+entsprechen soll. Logischerweise sollte er gleich heißen, machen wir also was
+Git vorschlägt:
+
+```bash
+git push --set-upstream origin my-branch
+```
+
+Jetzt hat es funktioniert. Wenn du nochmal `git log` ausführst, siehst du, dass
+unser aktueller Commit nun sowohl von `my-branch` und `origin/my-branch`
+refenziert wird. In GitHub kannst du auf der Übersichtsseite deines Repositories
+oben links nun auch fröhlich zwischen deinen Branches hin- und herspringen.
+Dabei wird dir auffallen, dass unser `master`-Branch noch keine Datei
+`entry_2.txt` enthält. Das war zu erwarten, denn der hinkt ja auch noch einen
+Commit hinter `my-branch` hinterher!
+
+Du kannst diesen Wechsel ganz easy auch lokal vollziehen:
+
+```bash
+git checkout master
+```
+
+Nachdem du diesen Befehl ausgeführt hast, kannst du dich mit einem kurzen `ls`
+davon überzeugen, dass das zweite angelegte File nicht da ist.'Im nächsten Modul
+kümmern wir uns dann darum, dass unser zweiter Tagebucheintrag in den Hauptzweig
+`master` überführt wird.
 
 ## Kontrollfragen
 
@@ -381,6 +503,7 @@ Autor und den Zeitpunkt.
   remote Repositories nachvollzogen sowie uns `push` und `pull` angesehen. 
 * Wir haben einen Branch angelegt, dort eine zweite Datei committed und beides
   nach GitHub übertragen und dort angeschaut.
+* Wir wissen, wie man zwischen Branches hin und her wechselt.
 
 Unser Repository hat jetzt zwei Zweige. Toll. Was bringt das? Weiter geht's mit
 Teil 3!
