@@ -450,7 +450,7 @@ Ups.
 > `git push --set-upstream origin my-branch`
 
 Da hat wohl was nicht geklappt, aber Git hilft wie immer tatkräftig weiter. Es
-weiß nicht automatisch, welchem Brnach euer lokaler Branch im Remote Repository
+weiß nicht automatisch, welchem Branch euer lokaler Branch im Remote Repository
 entsprechen soll. Logischerweise sollte er gleich heißen, machen wir also was
 Git vorschlägt:
 
@@ -473,9 +473,11 @@ git checkout master
 ```
 
 Nachdem du diesen Befehl ausgeführt hast, kannst du dich mit einem kurzen `ls`
-davon überzeugen, dass das zweite angelegte File nicht da ist.'Im nächsten Modul
+davon überzeugen, dass das zweite angelegte File nicht da ist. Im nächsten Modul
 kümmern wir uns dann darum, dass unser zweiter Tagebucheintrag in den Hauptzweig
 `master` überführt wird.
+[Weitere Infos zu Branches findest du im offiziellen Git-Book](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell)
+(auf englisch).
 
 ## Kontrollfragen
 

@@ -66,7 +66,7 @@ Jetzt aber los!
 
 ## Modul 2: Unser Erstes Repository
 
-[(TODO) Hier geht es zum zweiten Modul: Git Basics](/git-workshop/2-basics/)
+[Hier geht es zum zweiten Modul: Git Basics](/git-workshop/2-basics/)
 
 ## Modul 3: Mit Merge Requests Arbeiten
 
