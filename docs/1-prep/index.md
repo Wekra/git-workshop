@@ -200,6 +200,18 @@ ssh-add ~/.ssh/id_rsa
 Fertig. Jetzt müssen wir GitHub nur noch mitteilen, welchen Schlüssel wir da
 gerade erstellt haben; und dass es unserer ist.
 
+<details>
+  <summary>Fehler: Could not open a connection to your authentication agent.</summary>
+  
+  Solltet ihr beim Ausführen des ```ssh-add```-Befehls die oben genannte Fehlermeldung erhalten, ist der `ssh-agent` noch nicht gestartet.
+  Mithilfe des folgenden Befehls könnt ihr dies ändern:
+  
+  ```bash
+  eval $(ssh-agent)
+  ```
+  Als Kontrollausgabe solltet ihr z.B. `Agent pid 406` bekommen, wobei die Nummer unerheblich und bei euch vermutlich eine andere ist.
+</details>
+
 ### SSH-Key bei GitHub hinterlegen
 
 Wenn ihr nach eurer Registrierung noch bei GitHub angemeldet seid, führt euch
