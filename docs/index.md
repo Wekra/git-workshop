@@ -30,7 +30,7 @@ Folgende Module solltest du in dieser Reihenfolge bearbeiten:
 
 Dieser Workshop funktioniert nach dem "Inverted Classroom"-Prinzip. (Mehr dazu
 auf [Wikipedia](https://de.m.wikipedia.org/wiki/Umgedrehter_Unterricht).) Wir
-stellen dir die Materialien vorab zur Verfügung, und du kannst die Einheiten
+stellen dir die Materialien vorab zur Verfügung und du kannst die Einheiten
 bearbeiten, wann es dir passt. Und vor allem: In deinem Tempo.
 
 Du hast bis zum **29.04.2021** Zeit, diesen Workshop durchzuarbeiten. Keine
