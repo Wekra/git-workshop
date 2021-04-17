@@ -159,7 +159,7 @@ Vorgang des Deckel-drauf-und-ab-ins-Auto ist der Commit.
 
 Übertragen auf die Software-Entwicklung erlaubt dir die Staging Area, an
 mehreren Stellen in einer Code Base zu arbeiten, dann aber nur die Dateien
-zusammen zu commiten, die etwas miteinander zu tun haben. So sind deine Beiträge
+zusammen zu committen, die etwas miteinander zu tun haben. So sind deine Beiträge
 zu Coding-Projekten (hoffentlich) nachvollziehbar, atomar und ohne seltsame
 Nebeneffekte an Stellen, wo man sie nicht erwartet.
 
@@ -198,6 +198,8 @@ Projekten mal so Commit-Messages wie "Changed things", "this works but I don't
 know how" oder "Mama sagt es gibt Essen" verfasst. Achte aber einfach darauf,
 möglichst gut zu beschreiben, welche Änderungen du mit diesem Commit
 festhältst, und leg pro Projekt eine Sprache für Commit-Messages fest. 
+Weitere Überlegungen zu sinnvollen Commit-Messages findest du zum Beispiel [hier](https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/)
+oder [hier](https://udacity.github.io/git-styleguide/).
 
 Wenn du jetzt noch mal `git status` ausführst, siehst du, dass wir uns auf dem
 master-Branch befinden (Überraschung) und nichts zu committen haben, unser
@@ -287,7 +289,7 @@ Wenn alles geklappt hat, siehst du nach einem Refresh der Repo-Seite bei GitHub
 im Browser, dass dein Tagebucheintrag aufgetaucht ist. Herzlichen Glückwunsch,
 du hast ein Remote Repo erfolgreich angelegt!
 
-## Änderugen von Remote ins lokale Repository holen
+## Änderungen von Remote ins lokale Repository holen
 
 Das Git sich wunderbar eignet um Projektarbeiten im Team zu koordnieren, wollen
 wir euch in diesem Abschnitt zeigen. Bisher haben nur **wir** Änderungen lokal
@@ -295,9 +297,9 @@ vorgenommen und sie in das **Remote Repository** geladen, um sie Mitarbeitern
 zur Verfügung zu stellen. Um den  Anwendungsfall "Mitarbeiter ändert etwas im
 Repository" zu simulieren nehmen wir Änderungen unserer Datei über GitHub vor.
 Dazu öffnen wir unser Repository im Browser und klicken auf unsere Datei. Es
-erscheint eine Ansicht der Datei und oben rechts findet ihr einen *Stift-Symbol*
+erscheint eine Ansicht der Datei und oben rechts findet ihr ein *Stift-Symbol*
 um die Datei zu bearbeiten. In diesem einfachen Fall fügen wir einfach eine
-Zeile hinzu. Achtung, auch hier müssen wir die Änderung commiten. Unterhalb der
+Zeile hinzu. Achtung, auch hier müssen wir die Änderung committen. Unterhalb der
 Datei befinden sich entsprechende Felder für den Titel und eine kleine
 Beschreibung. Anschließend klickt ihr auf **commit changes**. Jetzt haben wir in
 unserem Remote Repository Änderungen vorgenommen, die wir nicht im lokalen
@@ -332,11 +334,11 @@ wir die Ausgabe:
 Das sieht doch schon besser aus. Und auch hier liefert uns git schon den
 Hinweis, was als nächstes zu erledigen ist um die Änderungen des remote
 Repository lokal zu verweden: `git pull`. Das Terminal liefert einen groben
-Überblick welche Dateien verändert wurden, hier solltet ihr eure Änderung
+Überblick, welche Dateien verändert wurden - hier solltet ihr eure Änderung
 entdecken.
 
-Wie wir bereits gelernt haben kann man mit `git log` die Historie der Commits
-aufrufen, hier sollte nun auch der Commit erscheinen. Alternativ können wir auch
+Wie wir bereits gelernt haben, kann man mit `git log` die Historie der Commits
+aufrufen; hier sollte nun auch der Commit erscheinen. Alternativ können wir auch
 die Änderungen in der Datei prüfen.
 
 ```bash
@@ -366,7 +368,7 @@ grafisch darstellen:
 ```
 
 Dabei verweist der folgende Commit immer auf den vorherigen. So entsteht ein
-gedachter Baum, der Aktuell einfach nur einen langen, geraden Ast hat. Stell dir
+gedachter Baum, der aktuell einfach nur einen langen, geraden Ast hat. Stell dir
 nun folgendes vor:
 
 ```txt
@@ -419,7 +421,7 @@ my-branch" sagt. Nun legen wir einen zweiten Tagebuch-Eintrag an.
 echo "Das ist mein zweiter Tagebucheintrag." > entry_2.txt
 ```
 
-Wir commiten diese Datei mal direkt:
+Wir committen diese Datei mal direkt:
 
 ```bash
 git add entry_2.txt
